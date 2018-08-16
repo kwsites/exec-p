@@ -1,6 +1,6 @@
 {
   "name": "@kwsites/exec-p",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Execute a command and retrieve data as a promise.",
   "main": "src/exec",
   "repository": "git://github.com/kwsites/exec-p.git",

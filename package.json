@@ -1,0 +1,16 @@
+{
+  "name": "@kwsites/exec-p",
+  "version": "0.0.0",
+  "description": "Execute a command and retrieve data as a promise.",
+  "main": "src/exec",
+  "repository": "git://github.com/kwsites/exec-p.git",
+  "keywords": [
+    "child process",
+    "exec",
+    "spawn"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}

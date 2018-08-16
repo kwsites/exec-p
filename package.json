@@ -4,6 +4,9 @@
   "description": "Execute a command and retrieve data as a promise.",
   "main": "src/exec",
   "repository": "git://github.com/kwsites/exec-p.git",
+  "scripts": {
+    "postversion": "npm publish && git push && git push --tags"
+  },
   "keywords": [
     "child process",
     "exec",

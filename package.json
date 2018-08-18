@@ -1,6 +1,6 @@
 {
   "name": "@kwsites/exec-p",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Execute a command and retrieve data as a promise.",
   "main": "./dist/exec",
   "types": "./dist/exec.d.ts",

@@ -1,20 +1,18 @@
 
-import {spawn} from 'child_process';
+import { spawn, SpawnOptions } from 'child_process';
 
 /**
  * Spawns a child process to run the specified command. When there is a non-zero exit code, and there has been
  * output to `stderr` the resulting promise will throw and must be caught by the caller.
  *
- * @param {string} command
- * @param {string...} params
  * @returns {Promise<string>}
  */
-export function execP (command: string, ...params: string[]): Promise<string> {
+export function execP (command: string, params: string[] = [], options: SpawnOptions = {}): Promise<string> {
    return new Promise((ok, fail) => {
 
       const out: Buffer[] = [];
       const err: Buffer[] = [];
-      const spawned = spawn(command, params, {});
+      const spawned = spawn(command, params, options);
 
       spawned.stdout.on('data', data => out.push(data));
       spawned.stderr.on('data', data => err.push(data));

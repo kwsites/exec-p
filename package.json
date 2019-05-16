@@ -13,7 +13,9 @@
     "definitions": "dts-generator --name kwsites__exec-p --project ./ --out ./dist/index.d.ts",
     "generate": "tsc && npm run definitions",
     "preversion": "npm run clean && npm run generate",
-    "postversion": "npm publish && git push && git push --tags && npm run clean"
+    "postversion": "npm publish && git push && git push --tags && npm run clean",
+    "typings:clean": "rimraf ./dist/typings",
+    "typings:build": "tsc -p ./tsconfig.types.json"
   },
   "keywords": [
     "child process",

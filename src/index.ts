@@ -14,8 +14,8 @@ export function execP (command: string, params: string[] = [], options: SpawnOpt
       const err: Buffer[] = [];
       const spawned = spawn(command, params, options);
 
-      spawned.stdout.on('data', data => out.push(data));
-      spawned.stderr.on('data', data => err.push(data));
+      spawned.stdout!.on('data', data => out.push(data));
+      spawned.stderr!.on('data', data => err.push(data));
 
       spawned.on('error', e => err.push(new Buffer(String(e.stack), 'ascii')));
 
@@ -29,3 +29,5 @@ export function execP (command: string, params: string[] = [], options: SpawnOpt
 
    });
 }
+
+export * from './exec-iterator';

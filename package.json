@@ -12,7 +12,8 @@
     "clean": "rimraf ./dist",
     "build": "tsc",
     "preversion": "npm run clean && npm run build",
-    "postversion": "npm publish && git push && git push --tags"
+    "postversion": "npm publish && git push && git push --tags",
+    "test": "npm run build && node --test test/*.test.js"
   },
   "keywords": [
     "child process",
@@ -20,11 +21,17 @@
     "spawn"
   ],
   "license": "MIT",
-  "dependencies": {},
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "debug": "^4.4.3"
+  },
   "devDependencies": {
-    "@types/node": "^10.7.1",
+    "@types/debug": "^4.1.13",
+    "@types/node": "^18.19.130",
     "rimraf": "^2.6.2",
-    "typescript": "^3.0.1"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {}
 }

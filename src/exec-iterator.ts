@@ -1,5 +1,6 @@
 import { ChildProcess, spawn, SpawnOptions } from 'child_process';
 import debug from 'debug';
+import { abortError } from './abort';
 
 const log = debug('@kwsites/exec-p:iterator');
 let instances = 0;
@@ -195,14 +196,6 @@ function assertCommand (command: string, args: ReadonlyArray<string>) {
    if (!Array.isArray(args) || args.some(arg => typeof arg !== 'string' || arg.includes('\0'))) {
       throw new TypeError('execIterator: args must be an array of strings');
    }
-}
-
-function abortError (signal: AbortSignal): Error {
-   return Object.assign(new Error('The operation was aborted'), {
-      name: 'AbortError',
-      code: 'ABORT_ERR',
-      cause: signal.reason,
-   });
 }
 
 interface PendingRead {
